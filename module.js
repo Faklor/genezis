@@ -18,7 +18,7 @@ const refreshToken = async()=>{
             //console.log(JSON.stringify(file));
             console.log('writing to ' + path.join(__dirname,'../config/token.json'));
         })
-    }).catch(e=>{})
+    }).catch(e=>{console.log(e)})
 }
 const getData = async(type)=>{
     let data = {}
