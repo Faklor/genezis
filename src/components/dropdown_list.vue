@@ -1,13 +1,13 @@
 <template>
-  
-     <select name="list" ref="list_select" @change="setForm">
-        <option value="">Не выбрано</option>
-        <option value="leads">Сделка</option>
-        <option value="contacts">Контакт</option>
-        <option value="companies">Компания</option>
-     </select>
+    <h1>{{ store.apiName?'Категория':'Выберите категорию' }}</h1>
+    <select name="list" ref="list_select" @change="setForm">
+      <option value="">Не выбрано</option>
+      <option value="leads">Сделка</option>
+      <option value="contacts">Контакт</option>
+      <option value="companies">Компания</option>
+    </select>
      
-     <div ref="forms" class="forms">
+    <div ref="forms" class="forms">
       <div class=" "/>
 
       <div class="leads">
@@ -69,6 +69,10 @@
 </script>
 
 <style lang="scss" scoped>
+  h1{
+    text-align: center;
+    margin-bottom: 1em;
+  }
   select{
     padding: 0.5em 1em;
     font-size: 16px;
@@ -77,10 +81,7 @@
     outline: 0;
     border:none; 
     border-radius: 5px;
-    &:focus{
-      background-color: black;
-      color: #fff;
-    }
+    
   }
   .forms{
     div{

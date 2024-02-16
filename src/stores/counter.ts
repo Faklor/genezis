@@ -13,9 +13,14 @@ interface lead{
 interface company{
   name:string
 }
+//--------------------------------------------
 
 export const useCounterStore = defineStore('data', () => {
+  //=============defaul=====================
   const apiName:string = ''
+  const data = ref<Array<object>>([{}])
+  const setLoader = ref<boolean>(false)
+  //=============data=======================
   const contacts = ref<contact>({
     first_name:'',
     last_name:''
@@ -27,8 +32,7 @@ export const useCounterStore = defineStore('data', () => {
   const companies = ref<company>({
     name:''
   })
-  const data = ref<Array<object>>([{}])
-  const setLoader = ref<boolean>(false)
+  //========================================
  
  
   return { apiName, contacts, leads, companies,data,setLoader }

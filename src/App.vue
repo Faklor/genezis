@@ -14,6 +14,10 @@ import DataCreated from './components/data_created.vue'
   </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
+  main{
+    display: grid;
+  }
 
 </style>
