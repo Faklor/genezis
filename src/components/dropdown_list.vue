@@ -2,23 +2,23 @@
   
      <select name="list" ref="list_select" @change="setForm">
         <option value="">Не выбрано</option>
-        <option value="lead">Сделка</option>
-        <option value="contact">Контакт</option>
-        <option value="company">Компания</option>
+        <option value="leads">Сделка</option>
+        <option value="contacts">Контакт</option>
+        <option value="companies">Компания</option>
      </select>
      
      <div ref="forms" class="forms">
       <div class=" "/>
 
-      <div class="lead">
+      <div class="leads">
           <input type="text" v-model="lead.name"  placeholder="Название сделки">
-          <input type="text" v-model="lead.price"  placeholder="Сумма сделки">
+          <input type="number" v-model="lead.price"  placeholder="Сумма сделки">
       </div>
-      <div class="contact">
+      <div class="contacts">
           <input type="text" v-model="contact.first_name" placeholder="Имя контакта">
           <input type="text" v-model="contact.last_name" placeholder="Фамилия контакта">
       </div>
-      <div class="company">
+      <div class="companies">
           <input type="text" v-model="company.name"  placeholder="Название компании">
       </div>
     </div>
@@ -31,9 +31,9 @@
 
   const store = useCounterStore()
   //-----------storeData-------------
-  const contact = store.contact
-  const lead = store.lead
-  const company = store.company
+  const contact = store.contacts
+  const lead = store.leads
+  const company = store.companies
  
 
   //-----------useRef----------------
@@ -53,6 +53,7 @@
   })
   
   function setForm(e: any){
+    
     Array.prototype.slice.call(forms.value.children).map(div=>{
       if(e.target.value === div.className){
         store.apiName = div.className

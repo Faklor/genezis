@@ -1,6 +1,5 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import axios from 'axios'
 
 //--------------------intarface---------------
 interface contact{
@@ -17,21 +16,21 @@ interface company{
 
 export const useCounterStore = defineStore('data', () => {
   const apiName:string = ''
-  const contact = ref<contact>({
+  const contacts = ref<contact>({
     first_name:'',
     last_name:''
   })
-  const lead = ref<lead>({
+  const leads = ref<lead>({
     name:'',
     price:0
   })
-  const company = ref<company>({
+  const companies = ref<company>({
     name:''
   })
   const data = ref<Array<object>>([{}])
   const setLoader = ref<boolean>(false)
  
  
-  return { apiName, contact, lead, company,data,setLoader }
+  return { apiName, contacts, leads, companies,data,setLoader }
 })
 

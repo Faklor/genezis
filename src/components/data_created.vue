@@ -29,6 +29,7 @@
       store.data = {}
     }
     a()
+    
     })
 </script>
 
